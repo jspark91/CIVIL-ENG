@@ -1,0 +1,5 @@
+ezdxf==1.4.3
+numpy==2.4.3
+fonttools==4.62.1
+pyparsing==3.3.2
+typing_extensions==4.15.0

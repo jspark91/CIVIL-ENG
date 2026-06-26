@@ -17,12 +17,17 @@ Generated outputs are separated by provider:
 - `outputs/kakao_map`
 - `outputs/google_map`
 
-For a no-EXE portable package, download:
+For team distribution where users should not install Python, download:
+
+- `releases/DxfMapViewer-team-0.1.0.zip`
+
+That package includes a local Python runtime. Users only need to extract the ZIP
+and double-click `Run-DxfMapViewer.cmd`.
+
+For PCs that already have Python installed, a smaller no-EXE package is also
+available:
 
 - `releases/DxfMapViewer-python-0.1.0.zip`
-
-That package runs through Python with `Run-DxfMapViewer.cmd`, which is useful
-when company security software deletes unsigned PyInstaller executables.
 
 Usage and API key setup:
 
@@ -34,4 +39,10 @@ Quick local run from source:
 python -m pip install -r requirements.txt --target .\pydeps
 $env:PYTHONPATH = ".\pydeps"
 python .\tools\naver_map_webapp.py
+```
+
+Build the team package from source:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\tools\build_dxf_map_team_portable.ps1
 ```

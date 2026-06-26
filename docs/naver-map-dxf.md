@@ -104,6 +104,17 @@ That package starts the same app through `Run-NaverMapDxfViewer.cmd` and the
 user's installed Python. It is less convenient because Python 3.11+ must be
 installed on the target PC, but it avoids shipping a custom executable.
 
+For team distribution where users should not install Python, build the
+self-contained team package:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\tools\build_dxf_map_team_portable.ps1
+```
+
+This writes `outputs/naver_map_portable/DxfMapViewer-team-0.1.0.zip`. Users only
+need to extract the ZIP and run `Run-DxfMapViewer.cmd`; the package includes a
+local Python runtime and the required DXF parsing dependencies.
+
 ## Coordinate Systems
 
 Supported inputs:
